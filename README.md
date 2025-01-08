@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo-do-DoseAgenda" src="https://i.ibb.co/dgtLwbQ/file-1.png" width="120" />
+  <img alt="Logo-do-DoseAgenda" src="https://i.ibb.co/dgtLwbQ/file-1.png" width="125" />
 </div>
 <h1 align="center">
   Matías Ezequiel Correa - Projeto "DoseAgenda"
