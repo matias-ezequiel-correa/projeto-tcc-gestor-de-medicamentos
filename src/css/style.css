@@ -156,7 +156,7 @@ li p {
 
 @media (max-width: 768px) {
     .logo {
-        width: 100px; /* Reduz o tamanho da logo */
+        width: 100px; 
     }
 
     #calendar {
@@ -166,7 +166,7 @@ li p {
 
 @media (max-width: 480px) {
     .logo {
-        width: 80px; /* Reduz ainda mais para telas pequenas */
+        width: 80px;
     }
 
     #calendar {
