@@ -191,10 +191,14 @@ li p {
     padding-top: 10px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .footer .social i {
     font-size: 30px;
     transition: 0.3s;
-    color: #000;
+    color: #fff;
 }
 
 .footer .social a {
@@ -202,5 +206,5 @@ li p {
 }
 
 .footer .social i:hover {
-    color: #fff;
+    color: #000;
 }
