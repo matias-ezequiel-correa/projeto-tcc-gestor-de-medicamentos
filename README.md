@@ -9,7 +9,7 @@
 </p>
 
 ## Demo Video: <br>
-[<p align="center"><img width="250" src="./src/design/projeto-doseAgenda-video.gif" alt="gif do projeto doseAgenda">](https://matias-ezequiel-correa.github.io/projeto-tcc-rascunho/)</p>
+[<p align="center"><img width="250" src="./src/design/projeto-tcc-video.gif" alt="gif do projeto doseAgenda">](https://matias-ezequiel-correa.github.io/projeto-tcc-rascunho/)</p>
 
 * Desktop Design:
 [<p align="center"><img height="400em" src="./src/design/projeto-tcc-desktop.png" alt="Projeto doseAgenda - Versão Desktop">](https://matias-ezequiel-correa.github.io/projeto-tcc-rascunho/)<p>
