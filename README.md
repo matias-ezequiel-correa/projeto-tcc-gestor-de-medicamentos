@@ -9,6 +9,7 @@
 </p>
 
 ## Demo Video: <br>
+* Mobile Design:
 [<p align="center"><img width="250" src="./src/design/projeto-tcc-video.gif" alt="gif do projeto doseAgenda">](https://matias-ezequiel-correa.github.io/projeto-tcc-rascunho/)</p>
 
 * Desktop Design:
