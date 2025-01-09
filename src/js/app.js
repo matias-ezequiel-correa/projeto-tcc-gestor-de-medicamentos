@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const calendar = document.getElementById('calendar');
     const clearAllBtn = document.getElementById('clearAllBtn');
 
-    // Carregar medicamentos armazenados no localStorage
     loadMedications();
 
     form.addEventListener('submit', function (e) {
@@ -20,9 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Criar objeto de medicamento
         const medication = {
-            id: Date.now() + Math.random(), // Identificador único baseado em timestamp
+            id: Date.now() + Math.random(), 
             name: medName,
             dose: medDose,
             day: medDay,
@@ -30,21 +28,18 @@ document.addEventListener('DOMContentLoaded', function () {
             instructions: medInstructions
         };
 
-        // Salvar medicamento no localStorage
         saveMedication(medication);
 
-        // Limpar formulário
         form.reset();
 
-        // Recarregar a lista de medicamentos
         loadMedications();
         
     });
 
     clearAllBtn.addEventListener('click', function () {
         if (confirm('Você tem certeza de que deseja limpar todos os medicamentos registrados?')) {
-            localStorage.removeItem('medications'); // Remove todos os medicamentos do localStorage
-            loadMedications(); // Atualiza a exibição para limpar os medicamentos
+            localStorage.removeItem('medications');
+            loadMedications();
         }
     });
 
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const daysOfWeek = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'];
 
         if (medication.day === 'Todos') {
-            // Se o dia for "Todos", adicionar o medicamento para cada dia da semana com ID único
             daysOfWeek.forEach(day => {
                 const medCopy = { ...medication, day, id: Date.now() + Math.random() };
                 medications.push(medCopy);
@@ -62,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
             medications.push(medication);
         }
 
-        // Ordenar medicamentos por dia e horário
         medications.sort((a, b) => {
             const daysOrder = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'];
             return daysOrder.indexOf(a.day) - daysOrder.indexOf(b.day) || a.time.localeCompare(b.time);
@@ -73,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function loadMedications() {
-        calendar.innerHTML = ''; // Limpar o calendário atual
+        calendar.innerHTML = '';
         const medications = JSON.parse(localStorage.getItem('medications')) || [];
 
         const daysOfWeek = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'];
@@ -112,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
             calendar.appendChild(dayContainer);
         });
 
-        // Botões de edição e exclusão
         document.querySelectorAll('.delete-btn').forEach(button => {
             button.addEventListener('click', function () {
                 const id = this.getAttribute('data-id');
@@ -140,17 +132,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const med = medications.find(med => med.id === parseFloat(id));
 
         if (med) {
-            // Preencher os campos do formulário com os dados do medicamento selecionado
             document.getElementById('medName').value = med.name;
             document.getElementById('medDose').value = med.dose;
             document.getElementById('medDay').value = med.day;
             document.getElementById('medTime').value = med.time;
             document.getElementById('medInstructions').value = med.instructions;
 
-            // Excluir o medicamento editado
             deleteMedication(id);
 
-            // Rolar a página até o formulário
             const form = document.getElementById('medForm');
             form.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
